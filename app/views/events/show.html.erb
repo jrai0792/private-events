@@ -1,19 +1,21 @@
-<p id="notice"><%= notice %></p>
+<h2>Your Events</h2>
 
 <p>
-  <strong>Location:</strong>
-  <%= @event.location %>
+  <ul>
+    <li>
+      Creator: <%= @event.creator.name %> <br/> 
+    </li>
+    <li>
+      Event: <%= @event.eventname %> <br/>  
+    </li>
+    <li>
+      Location: <%= @event.location %><br/> 
+    </li>
+    <li>
+      Event_Date: <%= @event.start_date %>
+    </li>
+    <li>
+      Description: <%= @event.description %> 
+    </li>
+  </ul>
 </p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @event.start_date %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @event.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
