@@ -14,3 +14,20 @@
       <%end%>    
    </ul> 
 </p>
+<h3>Future Events</h3>
+<ul>
+   <%@user.attended_events.each do |event| %>
+      <% if Date.today < event.start_date%>
+      <%=event.eventname%>
+      <%end%>
+   <%end%>
+</ul>
+
+<h3>Past Events</h3>
+<ul>
+   <%@user.attended_events.each do |event| %>
+      <% if Date.today > event.start_date%>
+      <%=event.eventname%>
+      <%end%>
+   <%end%>
+</ul>

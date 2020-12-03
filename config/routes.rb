@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  root to: "users#new"
+  resources :invitations
+  root to: "events#index"
   resources :users, only: [:new, :create, :show]
   resources :events
+  resources :events do
+    resources :invitations
+  end
 
   get 'signup', to: 'users#new', as: 'signup'
   post 'sessions', to: 'sessions#create'

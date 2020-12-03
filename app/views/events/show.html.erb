@@ -19,3 +19,15 @@
     </li>
   </ul>
 </p>
+
+<h3>Attendees</h3>
+   <ul>
+      <%@event.user_attendeds.each do |attendee|%>
+         <li><%=attendee.name%></li>
+       <%end%>
+   </ul>
+   INVITE
+   <%=form_tag event_invitations_path(@event) do |f|%>
+   Invitee <%=select_tag(:invitee_name, options_for_select(User.all.collect{|u| u.name}))%>
+   <%=submit_tag "Invite"%>
+   <%end%>
