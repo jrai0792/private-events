@@ -26,8 +26,12 @@
          <li><%=attendee.name%></li>
        <%end%>
    </ul>
-   INVITE
+
+   <% if current_user.id == @event.creator.id%>
+   INVITE: 
    <%=form_tag event_invitations_path(@event) do |f|%>
-   Invitee <%=select_tag(:invitee_name, options_for_select(User.all.collect{|u| u.name}))%>
-   <%=submit_tag "Invite"%>
-   <%end%>
+    Invitee <%=select_tag(:invitee_name, options_for_select(User.all.collect{|u|u.name if u.id != current_user.id}))%>
+         <%=submit_tag "Invite"%>
+      <%end%>
+  <%end%> 
+   

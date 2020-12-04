@@ -3,19 +3,21 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_name(params[:name])
+    user = User.find_by(name: params[:name])
     if user
       session[:user_id] = user.id
-      flash[:info] ="Hello #{user.name}"
-      redirect_to root_path
-      else
-      render :new
+      flash[:notice] ="Hello #{user.name}"
+      redirect_to events_path
+    else
+      render signup_path
     end
+      
+    
   end
 
   def destroy
     session[:user_id] = nil
-    flash[:info] ="Logged out successfully"
+    flash[:notice] ="Logged out successfully"
     redirect_to login_path
   end
   
