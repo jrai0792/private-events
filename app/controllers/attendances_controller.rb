@@ -10,6 +10,7 @@ class AttendancesController < ApplicationController
     @attendance.user_attended_id = current_user.id
     invitation = Invitation.find(params["invitation_id"])
     if @attendance.save
+      invitation.update({status: true})
       flash[:notice] = "Invitation accepted!!"
       redirect_to root_path
     else

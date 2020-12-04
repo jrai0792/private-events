@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_04_053331) do
+ActiveRecord::Schema.define(version: 2020_12_04_102935) do
 
   create_table "attendances", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_053331) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "attendances", "users", column: "attended_event_id"
+  add_foreign_key "attendances", "events", column: "attended_event_id"
   add_foreign_key "attendances", "users", column: "user_attended_id"
   add_foreign_key "events", "users", column: "creator_id"
   add_foreign_key "invitations", "events"

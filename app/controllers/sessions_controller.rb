@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
       flash[:notice] ="Hello #{user.name}"
       redirect_to events_path
     else
-      render signup_path
+      flash[:notice] ="Try again"
+      redirect_to login_path
     end
       
     
