@@ -5,17 +5,17 @@ class InvitationsControllerTest < ActionDispatch::IntegrationTest
     @invitation = invitations(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get invitations_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_invitation_url
     assert_response :success
   end
 
-  test "should create invitation" do
+  test 'should create invitation' do
     assert_difference('Invitation.count') do
       post invitations_url, params: { invitation: { event_id: @invitation.event_id } }
     end
@@ -23,22 +23,22 @@ class InvitationsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to invitation_url(Invitation.last)
   end
 
-  test "should show invitation" do
+  test 'should show invitation' do
     get invitation_url(@invitation)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_invitation_url(@invitation)
     assert_response :success
   end
 
-  test "should update invitation" do
+  test 'should update invitation' do
     patch invitation_url(@invitation), params: { invitation: { event_id: @invitation.event_id } }
     assert_redirected_to invitation_url(@invitation)
   end
 
-  test "should destroy invitation" do
+  test 'should destroy invitation' do
     assert_difference('Invitation.count', -1) do
       delete invitation_url(@invitation)
     end

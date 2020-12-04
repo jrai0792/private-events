@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  #before_action :set_user, only: [:show, :edit, :update, :destroy]
+  # before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -21,21 +21,19 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)   
-    if @user.save   
-      session[:user_id] = @user.id   
-      redirect_to user_path(@user)   
-    else   
-      render :new   
-    end 
-
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
+    else
+      render :new
+    end
   end
-
 
   private
 
-    # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:name)
-    end
+  # Only allow a list of trusted parameters through.
+  def user_params
+    params.require(:user).permit(:name)
+  end
 end
