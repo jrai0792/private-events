@@ -18,7 +18,6 @@ class AttendancesController < ApplicationController
 
   def show
     @attendance = Attendance.all
-    
   end
 
   private
