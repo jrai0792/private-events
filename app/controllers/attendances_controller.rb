@@ -3,7 +3,7 @@ class AttendancesController < ApplicationController
   # POST /attendances.json
   def create
     @attendance = Attendance.new
-
+    event = Event.find(params['event_id'])
     @attendance.attended_event_id = params['event_id']
     @attendance.user_attended_id = current_user.id
     invitation = Invitation.find(params['invitation_id'])
@@ -13,7 +13,12 @@ class AttendancesController < ApplicationController
     else
       flash[:notice] = 'Invitation not accepted!!'
     end
-    redirect_to root_path
+    redirect_to event_path(event)
+  end
+
+  def show
+    @attendance = Attendance.all
+    
   end
 
   private
