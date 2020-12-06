@@ -14,8 +14,8 @@ class AttendancesTest < ApplicationSystemTestCase
     visit attendances_url
     click_on 'New Attendance'
 
-    fill_in 'Event', with: @attendance.event_id
-    fill_in 'User', with: @attendance.user_id
+    fill_in 'Event', with: @attendance.attended_event_id
+    fill_in 'User', with: @attendance.user_attended_id
     click_on 'Create Attendance'
 
     assert_text 'Attendance was successfully created'
@@ -26,8 +26,8 @@ class AttendancesTest < ApplicationSystemTestCase
     visit attendances_url
     click_on 'Edit', match: :first
 
-    fill_in 'Event', with: @attendance.event_id
-    fill_in 'User', with: @attendance.user_id
+    fill_in 'Event', with: @attendance.attended_event_id
+    fill_in 'User', with: @attendance.user_attended_id
     click_on 'Update Attendance'
 
     assert_text 'Attendance was successfully updated'

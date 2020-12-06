@@ -1,0 +1,12 @@
+example_id                             | status | run_time        |
+-------------------------------------- | ------ | --------------- |
+./spec/model/attendance_spec.rb[1:1:1] | passed | 0.02851 seconds |
+./spec/model/attendance_spec.rb[1:1:2] | passed | 0.00541 seconds |
+./spec/model/event_spec.rb[1:1:1]      | passed | 0.00472 seconds |
+./spec/model/event_spec.rb[1:1:2]      | passed | 0.00699 seconds |
+./spec/model/event_spec.rb[1:1:3]      | passed | 0.00573 seconds |
+./spec/model/event_spec.rb[1:2:1]      | passed | 0.02052 seconds |
+./spec/model/invitation_spec.rb[1:1]   | passed | 0.01086 seconds |
+./spec/model/invitation_spec.rb[1:2]   | passed | 0.00724 seconds |
+./spec/model/invitation_spec.rb[1:3]   | passed | 0.01624 seconds |
+./spec/model/user_spec.rb[1:1:1]       | passed | 0.0128 seconds  |
