@@ -1,0 +1,33 @@
+<h3> Your Events </h3>
+<p>
+   <ul id = "users">
+      <% @created_events.each do |event|%>
+      <li>
+          Event: <%= event.name %> <br/> 
+      </li>
+      <li>
+        Location: <%= event.location %><br/>
+      </li>
+      <li>     
+         Event_Date: <%= event.start_date %>
+      </li>
+      <%end%>    
+   </ul> 
+</p>
+<h3>Future Events</h3>
+<ul>
+   <%@future_events.each do |event| %>
+      <% if Date.today < event.start_date%>
+      <%=event.eventname%>
+      <%end%>
+   <%end%>
+</ul>
+
+<h3>Past Events</h3>
+<ul>
+   <%@past_events.each do |event| %>
+      <% if Date.today > event.start_date%>
+      <%=event.eventname%>
+      <%end%>
+   <%end%>
+</ul>
